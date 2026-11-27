@@ -20,6 +20,7 @@
 - Research Track routes reportable verified claims with stale reproduction or review provenance to Investigators, then routes stale proof packets back to Triagers before reporting.
 - Research Track discovery and Reviewers stop standalone proof work when a claim is downrated to low or informational without a credible program-level impact path.
 - Project search indexing keys `project_search_fts` updates, deletes, and joins by `rowid` (with an automatic schema migration aligning pre-existing FTS rows), resolves structure relation targets via a single scope-level lookup table, and reads each scanned file at most once during inventory and structure indexing.
+- Session event cursor lookups, detail reads, and paged stream queries now use indexed `(session_id, event_id)` lookups first and bounded edge probes instead of full-session JSON scans.
 
 #### Fixed
 
