@@ -6,6 +6,7 @@
 
 #### Fixed
 
+- Titlebar breadcrumb labels, window menu static rows, and view pill tabs now use sufficient line height so glyph descenders are not clipped by single-line truncation.
 - Local app-server recovery now re-probes `/health` instead of returning a cached discovery record when a live process becomes unresponsive, and clears cached discovery records across stop and restart operations.
 
 ### app-server
