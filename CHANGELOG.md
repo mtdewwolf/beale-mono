@@ -24,6 +24,7 @@
 - Non-OpenAI-Responses sessions no longer trigger spurious initial context compaction and host research checkpoints when history is below the compaction threshold, and continue to compact proactively on later turns after a host research checkpoint is present.
 - `finding.list` and `lead.list` catalog projections preserve evidence `verificationContext` in compact evidence reads so unqualified independent reviews are no longer counted as validated or reported as completion-ready.
 - Worker-only Research Track epochs now pass session preparation and launch their reserved claim workers instead of failing with a missing-surface error and pausing the track.
+- `shell.run` ignores `child.stdin` write errors such as `EPIPE` instead of crashing the worker, honors abort signals that fire before child spawn, closes and removes lease files on write failure, and reclaims stale empty or corrupt lease files after the grace window.
 
 ## 0.9.6
 
