@@ -16,6 +16,7 @@
 #### Fixed
 
 - Non-OpenAI-Responses sessions no longer trigger spurious initial context compaction and host research checkpoints when history is below the compaction threshold, and continue to compact proactively on later turns after a host research checkpoint is present.
+- `finding.list` and `lead.list` catalog projections preserve evidence `verificationContext` in compact evidence reads so unqualified independent reviews are no longer counted as validated or reported as completion-ready.
 
 ## 0.9.6
 
